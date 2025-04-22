@@ -1,7 +1,7 @@
 {
   "name": "rnp-expo-starter",
   "description": "Expo Starter Template with React Native Paper",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "main": "expo-router/entry",
   "scripts": {
     "start": "expo start -c",

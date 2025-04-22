@@ -1,5 +1,14 @@
+import { ThemeProvider } from "@react-navigation/native";
 import { SplashScreen, Stack } from "expo-router";
+import { useColorScheme } from "react-native";
+import { PaperProvider } from "react-native-paper";
 import "react-native-reanimated";
+import {
+  NavigationDarkTheme,
+  NavigationLightTheme,
+  PaperDarkTheme,
+  PaperLightTheme,
+} from "../constants/Themes";
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -7,17 +16,38 @@ export {
 } from "expo-router";
 
 export const unstable_settings = {
-  //   initialRouteName: "(tabs)",
-  initialRouteName: "index",
+  initialRouteName: "(tabs)",
 };
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
 const RootLayoutNavigator = () => {
+  const colorScheme = useColorScheme();
+
   return (
     <>
-      <Stack />
+      <PaperProvider
+        theme={colorScheme === "dark" ? PaperDarkTheme : PaperLightTheme}>
+        <ThemeProvider
+          value={
+            colorScheme === "dark" ? NavigationDarkTheme : NavigationLightTheme
+          }>
+          <Stack
+            screenOptions={{
+              statusBarBackgroundColor:
+                colorScheme === "dark"
+                  ? NavigationDarkTheme.colors.background
+                  : NavigationLightTheme.colors.background,
+              statusBarStyle: colorScheme === "dark" ? "light" : "dark",
+            }}>
+            <Stack.Screen
+              name="(tabs)"
+              options={{ headerShown: false }}
+            />
+          </Stack>
+        </ThemeProvider>
+      </PaperProvider>
     </>
   );
 };
