@@ -1,0 +1,28 @@
+{
+  "name": "rnp-expo-starter",
+  "description": "Expo Starter Template with React Native Paper",
+  "version": "0.0.1",
+  "main": "expo-router/entry",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "test": "jest --watchAll"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "jest": {
+    "preset": "jest-expo"
+  },
+  "author": "Saikat Sardar",
+  "license": "MIT",
+  "homepage": "https://github.com/MrSaikatS/rnp-expo-starter#readme",
+  "bugs": {
+    "url": "https://github.com/MrSaikatS/rnp-expo-starter/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrSaikatS/rnp-expo-starter.git"
+  }
+}
