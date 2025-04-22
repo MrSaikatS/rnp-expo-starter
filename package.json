@@ -10,7 +10,9 @@
     "web": "expo start --web",
     "test": "jest --watchAll"
   },
-  "dependencies": {},
+  "dependencies": {
+    "expo": "52.0.46"
+  },
   "devDependencies": {
     "@babel/core": "7.25.2",
     "@types/react": "18.3.12",
