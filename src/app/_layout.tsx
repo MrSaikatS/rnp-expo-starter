@@ -64,9 +64,18 @@ const RootLayout = () => {
 
   // Online status management
   onlineManager.setEventListener((setOnline) => {
+    // Check initial state (this is good practice)
+    Network.getNetworkStateAsync()
+      .then((state) => setOnline(!!state.isConnected))
+      .catch((error) =>
+        console.warn("Failed to get initial network state:", error)
+      );
+
+    // Set up the listener (similar to official examples)
     const eventSubscription = Network.addNetworkStateListener((state) => {
       setOnline(!!state.isConnected);
     });
+
     return eventSubscription.remove;
   });
 
