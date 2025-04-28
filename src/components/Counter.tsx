@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useAtom } from "jotai";
 import { Button, Text } from "react-native-paper";
+import { counterAtom } from "../lib/atoms";
 
 const Counter = () => {
-  const [count, setCount] = useState<number>(0);
+  const [count, setCount] = useAtom(counterAtom);
 
   return (
     <>
@@ -11,6 +12,7 @@ const Counter = () => {
       <Button
         icon="plus"
         mode="contained"
+        style={{ marginTop: 20 }}
         onPress={() => setCount(count + 1)}>
         Press me
       </Button>
