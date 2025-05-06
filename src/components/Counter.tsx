@@ -1,9 +1,8 @@
-import { useAtom } from "jotai";
+import { useState } from "react";
 import { Button, Text } from "react-native-paper";
-import { counterAtom } from "../lib/atoms";
 
 const Counter = () => {
-  const [count, setCount] = useAtom(counterAtom);
+  const [count, setCount] = useState<number>(0);
 
   return (
     <>
