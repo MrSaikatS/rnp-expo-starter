@@ -30,6 +30,7 @@
 	"devDependencies": {
 		"@babel/core": "^7.26.0",
 		"@types/react": "~19.0.10",
+		"rimraf": "^6.0.1",
 		"typescript": "~5.8.3"
 	},
 	"author": "Saikat Sardar",
